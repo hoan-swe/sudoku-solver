@@ -30,8 +30,8 @@ s2 = [[0,3,0,0,7,0,0,0,0],  #0  #5
     [9, 6, 1, 5, 3, 7, 2, 8, 4]
     [2, 8, 7, 4, 1, 9, 6, 3, 5]
     [3, 4, 5, 2, 8, 6, 1, 7, 9]'''
-sudoku = GRID(s2)
-print(sudoku.unsolved_dict)
+sudoku = GRID(s1)
+#print(sudoku.answers_dict)
 
 Solve_sudoku(sudoku)
 
@@ -39,7 +39,7 @@ for i in range(9):
   print(sudoku.grid[i])
 
 print(f'Solve: {sudoku.solve}\nUpdate: {sudoku.update}\nEasy: {sudoku.easy}')
-
+#print(sudoku.answers_dict)
 
 '''Unsolved
 409008030

@@ -12,6 +12,6 @@ class GRID:
           if self.grid[row][col] == 0:
             poss_nums = self.nums - set(self.grid[row])
             for num in poss_nums.copy():
-              if Is_in_col(self.grid, col, num) or Is_in_box(self.grid, row - row%3, col - col%3, num):
+              if Is_used(self.grid, row, col, num):
                 poss_nums.remove(num)
             self.answers_dict[(row, col)] = poss_nums

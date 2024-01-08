@@ -1,4 +1,5 @@
-from ValidCheck import *
+from ValidCheck import Is_used
+
 
 class GRID:
     def __init__(self, grid):
@@ -6,6 +7,7 @@ class GRID:
       self.answers_dict = {}
       self.nums = {1,2,3,4,5,6,7,8,9}
       self.solve, self.update, self.easy, self.hard = 0,0,0,0
+      self.row, self.col, self.box = 0, 0, 0
       
       for row in range(9):
         for col in range(9):

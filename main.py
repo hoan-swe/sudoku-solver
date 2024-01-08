@@ -1,33 +1,36 @@
-from ValidCheck import *
-from Generator import *
+from Generator import GRID
 from SolvingAlgorithm import *
 
-s1 = [[4,0,9,0,0,8,0,3,7],
-     [0,5,0,0,3,2,0,1,8],
-     [1,0,0,5,0,0,2,0,6],
-     [8,0,0,0,0,3,0,0,0],
-     [0,3,0,0,4,0,0,7,5],
-     [0,0,1,0,0,7,0,0,0],
-     [0,0,0,4,0,0,0,0,9],
-     [0,1,0,0,0,0,0,4,2],
-     [2,0,4,0,1,0,0,5,0]]
 
-solution = [[4, 2, 9, 1, 6, 8, 5, 3, 7],
-            [7, 5, 6, 9, 3, 2, 4, 1, 8],
-            [1, 8, 3, 5, 7, 4, 2, 9, 6],
-            [8, 4, 7, 6, 5, 3, 9, 2, 1],
-            [9, 3, 2, 8, 4, 1, 6, 7, 5],
-            [5, 6, 1, 2, 9, 7, 3, 8, 4],
-            [3, 7, 8, 4, 2, 5, 1, 6, 9],
-            [6, 1, 5, 3, 8, 9, 7, 4, 2],
-            [2, 9, 4, 7, 1, 6, 8, 5, 3]]
+s1 = [[9,0,0,6,0,0,0,0,1],
+      [0,0,0,0,0,3,0,8,5],
+      [0,0,1,0,2,0,0,0,0],
+      [0,0,0,5,0,7,0,0,0],
+      [6,0,4,0,0,0,1,0,7],
+      [0,9,0,0,0,0,0,0,0],
+      [5,0,0,0,0,0,0,7,0],
+      [0,0,2,0,1,0,0,0,0],
+      [8,0,0,0,4,5,0,0,9]]
+
+solution = [[9, 8, 7, 6, 5, 4, 3, 2, 1],
+           [2, 4, 6, 1, 7, 3, 9, 8, 5],
+           [3, 5, 1, 9, 2, 8, 7, 4, 6],
+           [1, 2, 8, 5, 3, 7, 6, 9, 4],
+           [6, 3, 4, 8, 9, 2, 1, 5, 7],
+           [7, 9, 5, 4, 6, 1, 8, 3, 2],
+           [5, 1, 9, 2, 8, 6, 4, 7, 3],
+           [4, 7, 2, 3, 1, 9, 5, 6, 8],
+           [8, 6, 3, 7, 4, 5, 2, 1, 9]]
 sudoku = GRID(s1)
-#print(sudoku.answers_dict)
 
 Solve_sudoku(sudoku)
+#Solve_sudoku(sudoku)
 
+print(f'\nMain Func: {sudoku.solve}\nUpdate Func: {sudoku.update}\nEasy Func: {sudoku.easy}\nHard Func: {sudoku.hard}')
 
-print(f'\nSolve: {sudoku.solve}\nUpdate: {sudoku.update}\nEasy: {sudoku.easy}\nHard: {sudoku.hard}')
+print(f'\nRow: {sudoku.row} Col: {sudoku.col} Box: {sudoku.box}')
+
+print(f'\nUnsolved: {len(sudoku.answers_dict.keys())}')
 
 if sudoku.grid == solution:
   print()
@@ -39,3 +42,6 @@ else:
 if sudoku.answers_dict:
   print()
   print('Cannot be solved without guessing!')
+
+'''for pos in sudoku.answers_dict:
+  print(f'P: {pos} A: {sudoku.answers_dict[pos]}')'''
